@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    container_name: authentication_db 
+    environment:
+      POSTGRES_DB: auth_db_name
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+    volumes: 
+      - auth_db_vol:/var/lib/postgresql/data
+    ports: 
+      - 5432:5432
+      
+volumes: 
+  auth_db_vol:
+    name: auth_db_vol 
+    
